@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/animate.css" />
+
+        <!-- Include jQuery Mobile stylesheets -->
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+
+		<!-- Include the jQuery library -->
+		<script src="scripts/lib/jquery-1.11.1.min.js"></script>
+
+		<!-- Include the jQuery Mobile library -->
+		<script src="scripts/lib/jquery.mobile-1.4.5.min.js"></script>            
+
+        <title>Hello Cordova</title>
+    </head>
+    <body>
+
+        <!-- MAP VIEW -->
+
+        <div data-role="page" data-theme="a" id="map-tab">
+			<!--<div data-role="header" data-position="fixed" data-fullscreen="false">
+				<h1 id="headerMap">Map</h1>
+			</div>-->
+			
+			<div data-role="main">
+				<div style="width:100%;height:300px" id="map_canvas"></div>
+							
+				<div style="float: left; width: 50%;">
+					<object style="width:100px;height:100px" type="image/svg+xml" data="images/arrow.svg" id="compassArrow">
+						Your browser does not support SVG
+					</object>
+				</div>
+				<div style="float: left; width: 50%;">
+					<p id="heading"></p>
+				</div>
+
+				<p id="gpsDistance"></p>
+
+				<div data-role="controlgroup" data-type="horizontal">
+					<a href="#" class="ui-btn ui-btn-inline" id="btnMapFullScreen">Full screen</a>
+					<a href="#" class="ui-btn ui-btn-inline" id="btnMapFindMe">Find me</a>
+					<a href="#" class="ui-btn ui-btn-inline" id="btnMapTrackMe">Track me</a>
+					
+				</div>
+			</div>
+
+			<div data-role="footer" data-position="fixed" data-fullscreen="false">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#" class="ui-btn-active ui-state-persist" data-icon="navigation">MAP</a></li>
+						<li><a href="#list-tab" data-icon="bars" data-transition="slide">ITEMS</a></li>
+						<li><a href="#settings-tab" data-icon="gear" data-transition="slide">SETTINGS</a></li>
+                        <li><a href="#" data-icon="power" class="exitButton">EXIT</a></li>
+					</ul>
+				</div>
+			</div>     	
+		</div>
+
+        <!-- LIST VIEW -->
+
+		<div data-role="page" data-theme="a" id="list-tab">
+			<div data-role="header">
+                <h1>List items</h1>
+                <a href="#new-item-tab" data-transition="slide" data-icon="plus" class="ui-btn-right addArticleButton">Add</a>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <form class="ui-filterable">
+                    <input id="filter" data-type="search" />
+                </form>
+                <ul data-role="listview" data-inset="true" data-filter="true" data-input="#filter" id="articleList">
+                    <li class="article">
+                        <a href="#">
+                            <img src="#" class="article-picture">
+                            <h2 class="article-name"></h2>
+                            <p class="article-shop"></p>
+                            <p class="article-prise"></p>
+                            <pre class="article-desc"></pre>
+                        </a>
+                        <a href="#popupMenu" data-rel="popup" data-transition="pop" class="options ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-gear ui-btn-icon-left ui-btn-a">Actions...</a>
+                        
+                    </li> 
+                </ul>
+            </div>
+
+            <div data-role="popup" id="popupMenu">
+                <ul data-role="listview" data-inset="true" style="min-width:210px;">
+                    <li data-role="list-divider">Choose an action</li>
+                    <li><a href="#" id="editArticleButton">Edit</a></li>
+                    <li><a href="#" id="deleteArticleButton">Delete</a></li>
+                    <li><a href="#" id="shareArticleButton">Share</a></li>
+                </ul>
+            </div>
+
+
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#map-tab" data-icon="navigation">MAP</a></li>
+                        <li><a href="#" class="ui-btn-active ui-state-persist" data-icon="bars">ITEMS</a></li>
+                        <li><a href="#settings-tab" data-icon="gear">SETTINGS</a></li>
+                        <li><a href="#" data-icon="power" class="exitButton">EXIT</a></li>
+                    </ul>
+                </div>
+            </div>  
+		</div>
+
+        <!-- Item settings menu
+        <div data-role="page" data-theme="a" id="articleOptions" >
+            <div data-role="main" class="ui-content">
+                <h3>Options</h3>
+                <p>What do you want to do with this article?</p>
+                <a href="#" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-inline ui-mini" id="editArticleButton">Edit</a>
+                <a href="#" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-inline ui-mini" id="deleteArticleButton" data-rel="back">Delete</a>
+                <a href="#" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-inline ui-mini" id="cancelArticleButton" data-rel="back">Cancel</a>
+            </div>
+        </div>-->
+
+        <!-- NEW LIST ITEM-->
+        <div data-role="page" data-theme="a" id="new-item-tab">
+            <div data-role="header" data-position="fixed">
+                <a href="#" data-icon="check" class="ui-btn-left" id="save">Save</a>
+                <h1>Customize</h1>
+                <a href="#" data-icon="back" class="ui-btn-right" id="cancel">Cancel</a>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <form method="post" id="editArticle">
+                    <div class="ui-field-contain">
+                        <label for="articlename">Article name:</label>
+                        <input type="text" name="articlename" id="articlename">
+                    </div>
+                    <div class="ui-field-contain">
+                        <label for="shopname">Shop name:</label>
+                        <input type="text" name="shopname" id="shopname">
+                    </div>
+                    <div class="ui-field-contain">
+                        <label for="prise">Prise:</label>
+                        <input type="number" name="prise" id="prise">
+                    </div>
+                    <div class="ui-field-contain">
+                        <label for="description">Description:</label>
+                        <textarea name="description" id="description"></textarea>
+                    </div>
+                    <div class="ui-field-contain">
+                        <label for="location" class="locationLab">Include current location?</label>    
+                        <input type="checkbox" name="location" id="location">
+                    </div>
+                    <div class="ui-field-contain">
+                        <input type="button" name="takePicture" id="takePicture" value="Take Picture" data-icon="camera" data-iconpos="right" data-inline="true"/>
+                        <input type="button" name="pickPicture" id="pickPicture" value="Pick Picture" data-icon="action" data-iconpos="right" data-inline="true"/>
+                    </div>
+                    <div class="ui-field-contain">
+                        <img src="#" id="picture" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <!-- SETTINGS VIEW -->
+
+        <div data-role="page" data-theme="a" id="settings-tab">
+            <div data-role="header" data-position="fixed">
+                <h1>Settings</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <form>
+                    <fieldset data-role="controlgroup">
+                        <label for="settingsNotification">Notification</label>
+                        <input type="checkbox" id="settingsNotification" value="settingsNotification">
+                        <label for="settingsBatterySave">Save battery mode</label>
+                        <input type="checkbox" id="settingsBatterySave" value="settingsBatterySave">
+                        <label for="settingsDarkTheme">Dark theme</label>
+                        <input type="checkbox" id="settingsDarkTheme" value="settingsDarkTheme">
+                    </fieldset>
+                </form>
+
+                <a href="#" class="ui-btn" id="btnSettingsSave">Save</a>                
+                <a href="#pagetwo" class="ui-btn" id="btnSettingsAbout" data-transition="fade">About</a>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#map-tab" data-icon="navigation" data-transition="slide" data-direction="reverse">MAP</a></li>
+                        <li><a href="#list-tab" data-icon="bars" data-transition="slide" data-direction="reverse">ITEMS</a></li>
+                        <li><a href="#" class="ui-btn-active ui-state-persist" data-icon="gear">SETTINGS</a></li>
+                        <li><a href="#" data-icon="power" class="exitButton">EXIT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--About in settings-->
+
+        <div data-role="page" data-theme="a" data-dialog="true" id="pagetwo">
+            <div data-role="header">
+                <h1>About</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+
+                <p>Cordova app made by <b>Marko Ugrenović</b> and <b>Ivan Komatina</b></p>
+
+                <svg height="30%" width="100%">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:rgb(205,220,57);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgb(0,184,212);stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="0" y="0" rx="20" ry="20" width="100%" height="100%"
+                          style="fill:url(#grad1);stroke:black;stroke-width:2;opacity:1.0" />
+                    <h1 class="animated infinite pulse">shopUK</h1>
+                </svg>
+
+            </div>
+
+            <div data-role="footer">
+                <h1>Made in 2017</h1>
+            </div>
+        </div> 
+
+        <script type="text/javascript" src="scripts/MapAndCompass.js"></script>
+        <script type="text/javascript" src="scripts/SQLiteStorageService.js"></script>
+        <script type="text/javascript" src="scripts/Controller.js"></script>
+        <script type="text/javascript" src="scripts/index.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+    </body>
+</html>

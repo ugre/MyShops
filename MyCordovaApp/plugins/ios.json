@@ -1,0 +1,65 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "io.cordova.myappa28ded"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "io.cordova.myappa28ded"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "io.cordova.myappa28ded"
+        },
+        "cordova-plugin-camera": {
+            "CAMERA_USAGE_DESCRIPTION": " ",
+            "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "io.cordova.myappa28ded"
+        },
+        "cordova-plugin-contacts": {
+            "CONTACTS_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "io.cordova.myappa28ded"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "io.cordova.myappa28ded"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "io.cordova.myappa28ded"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "io.cordova.myappa28ded"
+        },
+        "cordova-plugin-geolocation": {
+            "GEOLOCATION_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "io.cordova.myappa28ded"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "io.cordova.myappa28ded"
+        },
+        "cordova-sms-plugin": {
+            "PACKAGE_NAME": "io.cordova.myappa28ded"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "io.cordova.myappa28ded"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "io.cordova.myappa28ded"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "io.cordova.myappa28ded"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "io.cordova.myappa28ded"
+        },
+        "es6-promise-plugin": {
+            "PACKAGE_NAME": "io.cordova.myappa28ded"
+        }
+    }
+}

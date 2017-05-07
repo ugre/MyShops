@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+        
+        <!-- Include jQuery Mobile stylesheets -->
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+
+		<!-- Include the jQuery library -->
+		<script src="scripts/lib/jquery-1.11.1.min.js"></script>
+
+		<!-- Include the jQuery Mobile library -->
+		<script src="scripts/lib/jquery.mobile-1.4.5.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+
+        <title>Hello Cordova</title>
+    </head>
+    <body>
+
+        <div id="container">
+            <div id="tab-content">
+
+                    <!-- MAP -->
+
+                    <div id="map-tab">
+			        	<h1>Map</h1>
+                        <button id="proba">Klikni me</button>
+			        </div>
+
+                    <!-- LIST VIEW -->
+
+			        <div id="list-tab" data-role="page">
+			        	<div data-role="header">
+                            <h1>List items</h1>
+                            <a href="#" data-icon="plus" class="ui-btn-right">Add</a>
+                        </div>
+
+                        <div data-role="main" class="ui-content">
+                            <ul data-role="listview" data-inset="true">
+                                <li>
+                                    <a href="#">
+                                        <img src="images/cordova.png">
+                                        <h2>Google Chrome</h2>
+                                        <p>Google Chrome is a free, open-source web browser. Released in 2008.</p>
+                                    </a>
+                                    <a href="#download" data-transition="pop" data-icon="gear">Download Browser</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/cordova.png">
+                                        <h2>Mozilla Firefox</h2>
+                                        <p>Firefox is a web browser from Mozilla. Released in 2004.</p>
+                                    </a>
+                                    <a href="#download" data-transition="pop" data-icon="gear">Download Browser</a>
+                                </li>
+                            </ul>
+                        </div>
+			        </div>
+
+                    <div data-role="page" id="download" data-dialog="true">
+                      <div data-role="main" class="ui-content">
+                      <h3>Options</h3>
+                        <p>The buttons below are for demonstration purposes only.</p>
+                        <a href="#" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-inline ui-mini" data-rel="back">Edit</a>
+                        <a href="#" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-inline ui-mini" data-rel="back">Share</a>
+                      </div>
+                    </div> 
+
+                    <!-- SETTINGS -->
+
+			        <div id="settings-tab" data-role="page">
+                        <div data-role="header">
+                            <h1>Settings</h1>
+                        </div>
+
+                        <div data-role="main" class="ui-content">
+                            <form>
+                                <fieldset data-role="controlgroup">
+                                    <label for="red">Async notification</label>
+                                    <input type="checkbox" name="favcolor" id="red" value="red">
+                                    <label for="green">Save battery mode</label>
+                                    <input type="checkbox" name="favcolor" id="green" value="green">
+                                    <label for="blue">Darh theme</label>
+                                    <input type="checkbox" name="favcolor" id="blue" value="blue">
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+
+        <footer>
+            <ul id="menu">
+                <li id="map-tab-button" class="tab-button active" data-tab="#map-tab">Map</li>
+                <li id="list-tab-button" class="tab-button" data-tab="#list-tab">List</li>
+                <li id="settings-tab-button" class="tab-button" data-tab="#settings-tab">Settings</li>
+            </ul>
+        </footer>
+
+        <div id="dev-null" style="display: none"></div>
+
+        <script type="text/javascript" src="scripts/Controller.js"></script>
+        <script type="text/javascript" src="scripts/index.js"></script>
+    </body>
+</html>

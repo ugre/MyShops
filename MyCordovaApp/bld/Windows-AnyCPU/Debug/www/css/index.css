@@ -1,0 +1,74 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
+.ui-page {
+	background-color: white;
+}
+
+/* GENERAL */
+
+h1{
+	text-align: center;
+}
+
+/* VIEWS */
+
+#container {
+	width: 100%;
+	margin: auto;
+}
+
+	#list-tab{
+		display: none;
+	}
+
+	#settings-tab{
+		display: none;
+	}
+
+/* -----------------------------*/
+
+footer ul#menu {
+	list-style: none;
+	width: 100%;
+	overflow: auto;
+	padding: 0;
+	margin:0;
+
+}
+footer ul#menu > li.tab-button {
+	display: block;
+	width: 33.3%;
+	padding: 10px 0;
+	float: left;
+	text-align: center;
+	cursor: pointer;
+	border: 1px solid #ccc;
+	border-top: 2px solid #ccc;
+	background:#fff;
+}
+footer ul#menu > li.tab-button.active {
+	font-weight: bold;
+	cursor: default;
+	border-top: 2px solid rgb(42, 42, 131);
+}
+
+
+#tab-content {
+	width: 98%;
+	margin: auto;	
+}
+
+/* TJ WAS HERE */
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+body .ui-page {
+	padding-top:10px;
+	padding-bottom:35px;
+}
+footer {
+	position: fixed;
+	bottom:0;
+	width:100%;
+
+}

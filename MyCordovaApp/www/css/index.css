@@ -1,0 +1,13 @@
+#picture{
+    display: none;
+    width: 300px;
+    height: 300px;
+}
+
+.article{
+    display: none
+}
+.article-pictrue{
+    width: 100px;
+    height: 100px;
+}
